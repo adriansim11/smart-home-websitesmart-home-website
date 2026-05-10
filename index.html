@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智能家居网站</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="返回首页">
+        <span class="brand-mark">H</span>
+        <span>Smart Home</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="#solutions">场景方案</a>
+        <a href="#devices">智能设备</a>
+        <a href="#app">控制中心</a>
+        <a href="#contact">预约咨询</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Connected Living</p>
+          <h1 id="hero-title">让每个空间，都懂你的生活节奏</h1>
+          <p class="hero-text">
+            这里是智能家居品牌网站的基础框架。你可以后期替换品牌名、产品图、服务内容和联系方式。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#contact">预约体验</a>
+            <a class="button secondary" href="#solutions">查看方案</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="智能家居控制面板预览">
+          <img src="assets/smart-home-panel.svg" alt="智能家居控制面板与家居设备插画" />
+        </div>
+      </section>
+
+      <section class="stats" aria-label="服务亮点">
+        <div>
+          <strong>24/7</strong>
+          <span>远程监测</span>
+        </div>
+        <div>
+          <strong>6+</strong>
+          <span>家庭场景</span>
+        </div>
+        <div>
+          <strong>1 App</strong>
+          <span>统一控制</span>
+        </div>
+      </section>
+
+      <section class="section" id="solutions">
+        <div class="section-heading">
+          <p class="eyebrow">Solutions</p>
+          <h2>从回家到入睡，自动完成每一步</h2>
+        </div>
+
+        <div class="solution-grid">
+          <article class="solution-card">
+            <span class="icon">⌂</span>
+            <h3>回家模式</h3>
+            <p>门锁识别后自动亮灯、调节空调、打开窗帘，让家提前进入舒适状态。</p>
+          </article>
+          <article class="solution-card">
+            <span class="icon">◐</span>
+            <h3>睡眠模式</h3>
+            <p>一键关闭公共区域灯光，降低噪音提醒，并保持卧室温湿度稳定。</p>
+          </article>
+          <article class="solution-card">
+            <span class="icon">◇</span>
+            <h3>安防模式</h3>
+            <p>离家后联动门磁、摄像头和传感器，异常情况及时推送到手机。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split" id="devices">
+        <div>
+          <p class="eyebrow">Devices</p>
+          <h2>常用设备统一管理</h2>
+          <p class="section-copy">
+            框架中预留了产品卡片区域，可用于展示灯光、窗帘、空调、门锁、摄像头、传感器等设备。
+          </p>
+        </div>
+
+        <div class="device-list">
+          <article>
+            <span>Light</span>
+            <strong>智能照明</strong>
+          </article>
+          <article>
+            <span>Climate</span>
+            <strong>温控系统</strong>
+          </article>
+          <article>
+            <span>Security</span>
+            <strong>家庭安防</strong>
+          </article>
+          <article>
+            <span>Curtain</span>
+            <strong>智能窗帘</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section app-preview" id="app">
+        <div class="phone" aria-label="手机控制界面预览">
+          <div class="phone-top"></div>
+          <div class="phone-card active">
+            <span>客厅</span>
+            <strong>舒适模式</strong>
+          </div>
+          <div class="phone-card">
+            <span>空气质量</span>
+            <strong>优</strong>
+          </div>
+          <div class="phone-controls">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow">Control Center</p>
+          <h2>一个控制中心，管理全屋设备</h2>
+          <p class="section-copy">
+            未来可以继续扩展 App 下载入口、设备兼容列表、用户案例和售后服务等模块。
+          </p>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>准备好打造你的智能空间了吗？</h2>
+        </div>
+        <form class="contact-form">
+          <label>
+            姓名
+            <input type="text" name="name" placeholder="请输入姓名" />
+          </label>
+          <label>
+            电话
+            <input type="tel" name="phone" placeholder="请输入电话" />
+          </label>
+          <label>
+            需求
+            <textarea name="message" rows="4" placeholder="例如：三房两厅智能照明和安防"></textarea>
+          </label>
+          <button class="button primary" type="submit">提交需求</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Smart Home. 后期可替换为你的品牌名称。</span>
+      <a href="#">隐私政策</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
