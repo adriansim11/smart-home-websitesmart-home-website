@@ -1,0 +1,34 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">智能家居控制面板</title>
+  <desc id="desc">展示家居空间、设备状态与手机控制界面的插画。</desc>
+  <rect width="960" height="720" rx="44" fill="#EAF4F0"/>
+  <path d="M148 531V304L479 104L812 304V531C812 560.8 787.8 585 758 585H202C172.2 585 148 560.8 148 531Z" fill="#FFFFFF" stroke="#C9DAD3" stroke-width="4"/>
+  <path d="M116 314L479 91L846 314" stroke="#17624B" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="244" y="355" width="154" height="230" rx="10" fill="#DFF4EE"/>
+  <rect x="434" y="344" width="280" height="150" rx="18" fill="#F6C86E"/>
+  <rect x="462" y="374" width="224" height="88" rx="12" fill="#FFF7E8"/>
+  <circle cx="361" cy="472" r="8" fill="#17624B"/>
+  <path d="M218 653C218 634.2 233.2 619 252 619H708C726.8 619 742 634.2 742 653V669H218V653Z" fill="#17624B"/>
+  <rect x="601" y="150" width="235" height="402" rx="36" fill="#1D2825"/>
+  <rect x="620" y="174" width="197" height="354" rx="24" fill="#F7FAF8"/>
+  <rect x="678" y="191" width="82" height="7" rx="3.5" fill="#1D2825"/>
+  <rect x="644" y="226" width="149" height="78" rx="12" fill="#17624B"/>
+  <text x="668" y="260" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="700">Living</text>
+  <text x="668" y="284" fill="#DFF4EE" font-family="Arial, sans-serif" font-size="14">Comfort mode</text>
+  <rect x="644" y="324" width="68" height="68" rx="12" fill="#DFF4EE"/>
+  <rect x="724" y="324" width="68" height="68" rx="12" fill="#F7D79B"/>
+  <rect x="644" y="408" width="68" height="68" rx="12" fill="#F3C9C2"/>
+  <rect x="724" y="408" width="68" height="68" rx="12" fill="#FFFFFF" stroke="#DCE5E1" stroke-width="3"/>
+  <circle cx="678" cy="358" r="12" fill="#2E8B6D"/>
+  <path d="M758 346V370M746 358H770" stroke="#B77A16" stroke-width="8" stroke-linecap="round"/>
+  <path d="M666 438H690M678 426V450" stroke="#C85644" stroke-width="8" stroke-linecap="round"/>
+  <path d="M748 446C756 436 764 436 772 446" stroke="#17624B" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="479" cy="290" r="58" fill="#DFF4EE" stroke="#17624B" stroke-width="8"/>
+  <path d="M454 291L472 309L507 269" stroke="#17624B" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="136" y="154" width="182" height="96" rx="18" fill="#FFFFFF" stroke="#C9DAD3" stroke-width="4"/>
+  <text x="166" y="195" fill="#17211F" font-family="Arial, sans-serif" font-size="20" font-weight="700">Energy</text>
+  <text x="166" y="224" fill="#65736F" font-family="Arial, sans-serif" font-size="16">Saving 28%</text>
+  <rect x="182" y="101" width="90" height="24" rx="12" fill="#F4B95F"/>
+  <circle cx="821" cy="607" r="22" fill="#E77966"/>
+  <circle cx="107" cy="591" r="28" fill="#2E8B6D"/>
+</svg>
