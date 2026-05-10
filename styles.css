@@ -129,6 +129,16 @@ textarea {
   transform: scaleX(1);
 }
 
+.nav-consult {
+  padding: 9px 14px;
+  color: var(--white);
+  border: 0;
+  border-radius: 8px;
+  background: var(--charcoal);
+  font-weight: 900;
+  cursor: pointer;
+}
+
 .nav-toggle {
   display: none;
   width: 42px;
@@ -249,6 +259,12 @@ h3 {
   background: rgba(255, 255, 255, 0.72);
 }
 
+.button.glass {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+}
+
 .hero-stage {
   position: relative;
   display: grid;
@@ -257,11 +273,30 @@ h3 {
   perspective: 1000px;
 }
 
-.hero-stage img {
-  position: relative;
-  z-index: 2;
-  width: min(100%, 760px);
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 34px;
+  box-shadow: var(--shadow);
+}
+
+.hero-stage::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  border-radius: 34px;
+  background: linear-gradient(90deg, rgba(17, 23, 22, 0.1), rgba(255, 255, 255, 0.52));
+}
+
+.hero-panel {
+  position: relative;
+  z-index: 3;
+  width: min(72%, 520px);
+  margin-left: auto;
+  border-radius: 24px;
   filter: drop-shadow(0 34px 48px rgba(20, 54, 45, 0.2));
   transform: rotateX(2deg) rotateY(-5deg);
   animation: floatDevice 6s ease-in-out infinite;
@@ -427,6 +462,161 @@ h3 {
 
 .scenes {
   background: #ffffff;
+}
+
+.experience {
+  background: #f7faf8;
+}
+
+.experience-board {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.room-preview {
+  position: relative;
+  min-height: 560px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--charcoal);
+  box-shadow: var(--shadow);
+}
+
+.room-preview img {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+  transition: filter 0.35s ease, transform 0.35s ease;
+}
+
+.room-preview.is-lights img {
+  filter: brightness(1.12) saturate(1.12) sepia(0.08);
+}
+
+.room-preview.is-climate img {
+  filter: brightness(1.04) saturate(0.92) hue-rotate(8deg);
+}
+
+.room-preview.is-security img {
+  filter: brightness(0.72) saturate(0.82);
+}
+
+.room-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.layer-lights {
+  background: radial-gradient(circle at 58% 28%, rgba(255, 202, 116, 0.38), transparent 36%);
+}
+
+.layer-climate {
+  background: linear-gradient(135deg, rgba(216, 241, 255, 0.36), transparent 55%);
+}
+
+.layer-security {
+  background:
+    linear-gradient(135deg, rgba(158, 230, 207, 0.2), transparent 45%),
+    repeating-linear-gradient(90deg, rgba(158, 230, 207, 0.13) 0 1px, transparent 1px 46px);
+}
+
+.room-preview.is-lights .layer-lights,
+.room-preview.is-climate .layer-climate,
+.room-preview.is-security .layer-security {
+  opacity: 1;
+}
+
+.hotspot {
+  position: absolute;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  background: rgba(24, 33, 31, 0.76);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+}
+
+.hotspot::after {
+  position: absolute;
+  inset: -10px;
+  content: "";
+  border: 1px solid rgba(158, 230, 207, 0.7);
+  border-radius: 50%;
+  animation: hotspotPulse 1.8s ease-out infinite;
+}
+
+.hotspot span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--jade);
+}
+
+.hot-light {
+  top: 18%;
+  left: 52%;
+}
+
+.hot-curtain {
+  top: 30%;
+  right: 14%;
+}
+
+.hot-security {
+  right: 24%;
+  bottom: 23%;
+}
+
+.control-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.control-card {
+  display: grid;
+  gap: 8px;
+  padding: 24px;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 18px 44px rgba(24, 33, 31, 0.08);
+  transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease;
+}
+
+.control-card:hover,
+.control-card.is-active {
+  color: var(--white);
+  background: var(--charcoal);
+  transform: translateY(-4px);
+}
+
+.control-card span {
+  color: var(--copper);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.control-card strong {
+  font-size: 24px;
+}
+
+.control-card small {
+  color: currentColor;
+  opacity: 0.72;
+  font-size: 15px;
 }
 
 .scene-switcher {
@@ -704,6 +894,57 @@ h3 {
   background: var(--white);
 }
 
+.detail-dialog,
+.consult-dialog {
+  width: min(92vw, 620px);
+  padding: clamp(26px, 4vw, 42px);
+  color: var(--ink);
+  border: 0;
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.36);
+}
+
+.detail-dialog::backdrop,
+.consult-dialog::backdrop {
+  background: rgba(10, 18, 16, 0.58);
+  backdrop-filter: blur(8px);
+}
+
+.dialog-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.dialog-points,
+.consult-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.dialog-points span,
+.consult-options span {
+  padding: 10px 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+  font-weight: 800;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -749,6 +990,17 @@ h3 {
   }
 }
 
+@keyframes hotspotPulse {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.75);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -789,8 +1041,15 @@ h3 {
     padding: 13px 10px;
   }
 
+  .nav-consult {
+    width: 100%;
+    margin-top: 6px;
+    text-align: left;
+  }
+
   .hero,
   .comparison,
+  .experience-board,
   .system,
   .app-preview,
   .contact {
@@ -803,6 +1062,10 @@ h3 {
 
   .hero-stage {
     min-height: 420px;
+  }
+
+  .hero-panel {
+    width: min(76%, 420px);
   }
 
   .metrics {
@@ -858,6 +1121,15 @@ h3 {
 
   .hero-stage {
     min-height: 330px;
+  }
+
+  .hero-panel {
+    display: none;
+  }
+
+  .room-preview,
+  .room-preview img {
+    min-height: 360px;
   }
 
   .live-chip {

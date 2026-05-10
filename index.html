@@ -26,8 +26,9 @@
       <nav class="site-nav" aria-label="主导航">
         <a href="#difference">核心区别</a>
         <a href="#scenes">生活场景</a>
+        <a href="#experience">交互体验</a>
         <a href="#system">系统能力</a>
-        <a href="#contact">预约咨询</a>
+        <button class="nav-consult open-consult" type="button">详细咨询</button>
       </nav>
     </header>
 
@@ -48,9 +49,16 @@
         </div>
 
         <div class="hero-stage reveal" aria-label="智能家居系统视觉预览">
-          <div class="signal-ring one"></div>
-          <div class="signal-ring two"></div>
-          <img src="assets/smart-home-panel.svg" alt="Adrian Smart Home 智能住宅控制系统" />
+          <img
+            class="hero-photo"
+            src="assets/adrian-smart-home-interior.png"
+            alt="Adrian Smart Home 高端智能家居客厅"
+          />
+          <img
+            class="hero-panel"
+            src="assets/smart-home-panel.svg"
+            alt="Adrian Smart Home 智能住宅控制系统"
+          />
           <div class="live-chip chip-energy">
             <span></span>
             <strong>Energy -18%</strong>
@@ -137,6 +145,53 @@
               <span class="status-pill">空调 24°C</span>
               <span class="status-pill">安防 在家</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section experience" id="experience">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Interactive Experience</p>
+          <h2>点击体验 Adrian Smart Home 的全屋联动</h2>
+          <p>
+            下面每个控制都可以点击。它会模拟不同设备启动后的效果，让访客更直观地理解
+            “智能家居不是遥控器，而是一个自动协作的系统”。
+          </p>
+        </div>
+
+        <div class="experience-board reveal">
+          <div class="room-preview is-lights" aria-label="可交互智能家居房间预览">
+            <img src="assets/adrian-smart-home-interior.png" alt="智能客厅交互体验图" />
+            <span class="room-layer layer-lights"></span>
+            <span class="room-layer layer-security"></span>
+            <span class="room-layer layer-climate"></span>
+            <button class="hotspot hot-light" type="button" data-detail="lighting" aria-label="查看智能灯光详情">
+              <span></span>
+            </button>
+            <button class="hotspot hot-curtain" type="button" data-detail="curtain" aria-label="查看智能窗帘详情">
+              <span></span>
+            </button>
+            <button class="hotspot hot-security" type="button" data-detail="security" aria-label="查看安防详情">
+              <span></span>
+            </button>
+          </div>
+
+          <div class="control-panel">
+            <button class="control-card is-active" type="button" data-mode="lights">
+              <span>Scene 01</span>
+              <strong>氛围灯光</strong>
+              <small>灯光自动匹配阅读、会客、观影和入睡状态。</small>
+            </button>
+            <button class="control-card" type="button" data-mode="climate">
+              <span>Scene 02</span>
+              <strong>恒温舒适</strong>
+              <small>空调、新风和传感器协同维持舒适体感。</small>
+            </button>
+            <button class="control-card" type="button" data-mode="security">
+              <span>Scene 03</span>
+              <strong>离家守护</strong>
+              <small>门窗、摄像头和人体感应自动进入布防。</small>
+            </button>
           </div>
         </div>
       </section>
@@ -228,9 +283,42 @@
             <textarea name="message" rows="4" placeholder="例如：公寓全屋灯光、窗帘、空调和安防"></textarea>
           </label>
           <button class="button primary" type="submit">提交预约</button>
+          <button class="button secondary glass open-consult" type="button">打开详细咨询窗口</button>
         </form>
       </section>
     </main>
+
+    <dialog class="detail-dialog" id="detail-dialog" aria-labelledby="detail-title">
+      <button class="dialog-close" type="button" aria-label="关闭窗口">×</button>
+      <p class="eyebrow" id="detail-kicker">Smart Detail</p>
+      <h2 id="detail-title">智能灯光系统</h2>
+      <p id="detail-copy">
+        根据自然光、时间和生活场景自动调整亮度与色温，让空间始终保持舒服的层次。
+      </p>
+      <div class="dialog-points" id="detail-points">
+        <span>自动调光</span>
+        <span>场景预设</span>
+        <span>节能联动</span>
+      </div>
+      <a class="button primary" href="#contact">我要咨询这个方案</a>
+    </dialog>
+
+    <dialog class="consult-dialog" id="consult-dialog" aria-labelledby="consult-title">
+      <button class="dialog-close" type="button" aria-label="关闭窗口">×</button>
+      <p class="eyebrow">Project Consultation</p>
+      <h2 id="consult-title">详细咨询 Adrian Smart Home</h2>
+      <p>
+        你可以先准备这几项信息：房屋类型、面积、想做的设备、预算范围、是否已经装修。
+        后期这里可以接入 WhatsApp、邮箱、微信二维码或真实客户系统。
+      </p>
+      <div class="consult-options">
+        <span>全屋智能规划</span>
+        <span>灯光与窗帘</span>
+        <span>安防与门锁</span>
+        <span>影音与氛围</span>
+      </div>
+      <a class="button primary" href="#contact">填写预约表单</a>
+    </dialog>
 
     <footer class="site-footer">
       <span>© 2026 Adrian Smart Home</span>

@@ -8,6 +8,17 @@ const sceneTitle = document.querySelector("#scene-title");
 const sceneCopy = document.querySelector("#scene-copy");
 const sceneKicker = document.querySelector(".scene-kicker");
 const sceneStatus = document.querySelector(".scene-status");
+const roomPreview = document.querySelector(".room-preview");
+const controlCards = document.querySelectorAll(".control-card");
+const detailDialog = document.querySelector("#detail-dialog");
+const consultDialog = document.querySelector("#consult-dialog");
+const detailTitle = document.querySelector("#detail-title");
+const detailCopy = document.querySelector("#detail-copy");
+const detailKicker = document.querySelector("#detail-kicker");
+const detailPoints = document.querySelector("#detail-points");
+const detailButtons = document.querySelectorAll("[data-detail]");
+const consultButtons = document.querySelectorAll(".open-consult");
+const closeButtons = document.querySelectorAll(".dialog-close");
 
 const scenes = {
   arrival: {
@@ -36,13 +47,34 @@ const scenes = {
   },
 };
 
+const details = {
+  lighting: {
+    kicker: "Lighting System",
+    title: "智能灯光系统",
+    copy: "根据自然光、时间和生活场景自动调整亮度与色温。观影时降低主灯，阅读时加强局部光，夜间起身只点亮地脚灯。",
+    points: ["自动调光", "色温场景", "节能联动"],
+  },
+  curtain: {
+    kicker: "Curtain Automation",
+    title: "智能窗帘与采光",
+    copy: "系统会根据日照、温度和隐私需求调整窗帘角度。早晨柔和打开，离家自动关闭，降低室内热量进入。",
+    points: ["日照判断", "隐私保护", "温度联动"],
+  },
+  security: {
+    kicker: "Security Network",
+    title: "全屋安防守护",
+    copy: "门锁、门磁、人体感应与摄像头联动。离家后自动布防，异常开门、移动或门窗未关都会即时提醒。",
+    points: ["离家布防", "异常提醒", "门窗检测"],
+  },
+};
+
 navToggle.addEventListener("click", () => {
   const isOpen = siteNav.classList.toggle("is-open");
   navToggle.setAttribute("aria-expanded", String(isOpen));
 });
 
 siteNav.addEventListener("click", (event) => {
-  if (event.target.matches("a")) {
+  if (event.target.matches("a, button")) {
     siteNav.classList.remove("is-open");
     navToggle.setAttribute("aria-expanded", "false");
   }
@@ -60,6 +92,53 @@ sceneTabs.forEach((tab) => {
     sceneCopy.textContent = scene.copy;
     sceneStatus.innerHTML = scene.status.map((item) => `<span class="status-pill">${item}</span>`).join("");
   });
+});
+
+controlCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    controlCards.forEach((item) => item.classList.remove("is-active"));
+    card.classList.add("is-active");
+
+    roomPreview.classList.remove("is-lights", "is-climate", "is-security");
+    roomPreview.classList.add(`is-${card.dataset.mode}`);
+  });
+});
+
+detailButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const detail = details[button.dataset.detail];
+
+    detailKicker.textContent = detail.kicker;
+    detailTitle.textContent = detail.title;
+    detailCopy.textContent = detail.copy;
+    detailPoints.innerHTML = detail.points.map((point) => `<span>${point}</span>`).join("");
+    detailDialog.showModal();
+  });
+});
+
+consultButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    consultDialog.showModal();
+  });
+});
+
+closeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    button.closest("dialog").close();
+  });
+});
+
+document.querySelectorAll("dialog a").forEach((link) => {
+  link.addEventListener("click", () => {
+    link.closest("dialog").close();
+  });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    detailDialog.close();
+    consultDialog.close();
+  }
 });
 
 const revealObserver = new IntersectionObserver(
