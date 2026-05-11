@@ -20,6 +20,8 @@ const detailButtons = document.querySelectorAll("[data-detail]");
 const consultButtons = document.querySelectorAll(".open-consult");
 const closeButtons = document.querySelectorAll(".dialog-close");
 
+document.documentElement.classList.add("js-enabled");
+
 const scenes = {
   arrival: {
     kicker: "回家模式",
